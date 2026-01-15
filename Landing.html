@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>ModeWeb | موقع عقاري يجلب طلبات زيارة</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Tajawal Font -->
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* ================= ROOT ================= */
+:root{
+  --bg-main:#156FBF;
+  --bg-light:#F4F7FB;
+
+  --primary:#0D1B2A;
+  --secondary:#1E293B;
+
+  --cta:#3282B8;
+  --cta-hover:#1F6FA5;
+
+  --text:#333333;
+  --muted:#6B7280;
+  --white:#FFFFFF;
+}
+
+/* ================= BASE ================= */
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:'Tajawal', Arial, sans-serif;
+  background:var(--bg-light);
+  color:var(--text);
+  line-height:1.8;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  background:var(--white);
+}
+
+/* ================= HEADER ================= */
+header{
+  background:var(--primary);
+  color:var(--white);
+  padding:35px 20px;
+  text-align:center;
+}
+
+.logo{
+  max-width:90px;
+  margin-bottom:10px;
+}
+
+/* ================= HERO ================= */
+.hero{
+  padding:90px 25px;
+  text-align:center;
+  background:linear-gradient(135deg, var(--bg-main), var(--cta));
+  color:var(--white);
+}
+
+.hero h1{
+  font-size:36px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  font-size:18px;
+  color:#EAF2FB;
+  max-width:700px;
+  margin:auto;
+}
+
+/* ================= BUTTON ================= */
+.cta{
+  display:inline-block;
+  margin-top:30px;
+  padding:15px 40px;
+  background:var(--cta);
+  color:var(--white);
+  text-decoration:none;
+  border-radius:8px;
+  font-size:18px;
+  font-weight:500;
+  transition:0.3s ease;
+}
+
+.cta:hover{
+  background:var(--cta-hover);
+  transform:translateY(-2px);
+}
+
+/* ================= SECTIONS ================= */
+.section{
+  padding:70px 30px;
+}
+
+.section h2{
+  color:var(--primary);
+  margin-bottom:25px;
+  font-size:28px;
+  position:relative;
+}
+
+.section h2::after{
+  content:"";
+  position:absolute;
+  bottom:-10px;
+  right:0;
+  width:60px;
+  height:3px;
+  background:var(--cta);
+}
+
+.section p{
+  color:var(--muted);
+}
+
+/* ================= LIST ================= */
+ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+ul li{
+  padding:10px 0;
+  font-size:17px;
+}
+
+/* ================= DARK BOX ================= */
+.box{
+  background:var(--secondary);
+  color:var(--white);
+  padding:40px 30px;
+  border-radius:12px;
+}
+
+.box h2{
+  color:var(--white);
+}
+
+.box p{
+  color:#E5E7EB;
+}
+
+/* ================= BONUS ================= */
+.bonus li{
+  background:#F8FAFC;
+  padding:15px;
+  border-radius:8px;
+  margin-bottom:12px;
+  border-right:5px solid var(--cta);
+  color:var(--primary);
+  font-weight:500;
+}
+
+/* ================= GUARANTEE ================= */
+.guarantee{
+  background:#F9FAFB;
+  border:2px dashed var(--cta);
+  border-radius:12px;
+}
+
+/* ================= PRICE ================= */
+.price{
+  background:linear-gradient(135deg, var(--primary), var(--secondary));
+  color:var(--white);
+  text-align:center;
+  border-radius:14px;
+}
+
+.price h2,
+.price p{
+  color:var(--white);
+}
+
+.price p{
+  font-size:22px;
+  margin-top:15px;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:var(--primary);
+  color:var(--white);
+  text-align:center;
+  padding:30px;
+  font-size:14px;
+}
+
+/* ================= ANIMATION ================= */
+.fade{
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeUp 0.9s ease forwards;
+}
+
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  .hero h1{font-size:28px;}
+  .section{padding:50px 20px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="fade">
+  <img src="logo.png" alt="ModeWeb Logo" class="logo">
+  <h2>ModeWeb لخدمات المواقع الإلكترونية</h2>
+</header>
+
+<section class="hero fade">
+  <h1>موقع عقاري يجلب لك طلبات زيارة جاهزة</h1>
+  <p>حوّل زوار العقارات إلى عملاء حقيقيين عبر موقع احترافي يعمل تلقائيًا 24/7</p>
+  <a class="cta" href="https://wa.me/+213656604882">تواصل معنا الآن</a>
+</section>
+
+<section class="section fade">
+  <h2>هل تواجه هذه المشاكل؟</h2>
+  <ul>
+    <li>❌ طلبات تضيع بين الرسائل</li>
+    <li>❌ اعتماد كامل على الإعلانات</li>
+    <li>❌ غياب موقع يرفع المصداقية</li>
+    <li>❌ الزائر يسأل ثم يختفي</li>
+  </ul>
+</section>
+
+<section class="section box fade">
+  <h2>الحل: موقع عقاري ذكي</h2>
+  <p>نصمّم لك موقعًا احترافيًا يعرض عقاراتك بوضوح ويحوّل الزائر مباشرة إلى طلب زيارة فعلي.</p>
+</section>
+
+<section class="section fade">
+  <h2>كيف يعمل الموقع؟</h2>
+  <ul>
+    <li>1️⃣ تصفح العقار</li>
+    <li>2️⃣ إرسال طلب زيارة</li>
+    <li>3️⃣ وصول الطلب فورًا إليك</li>
+  </ul>
+</section>
+
+<section class="section fade">
+  <h2>🎁 بونيسز حصرية</h2>
+  <ul class="bonus">
+    <li>✔ صفحة هبوط إعلانية</li>
+    <li>✔ ربط واتساب مباشر</li>
+    <li>✔ تحسين السرعة و SEO</li>
+    <li>✔ استضافة مجانية لمدة شهر</li>
+  </ul>
+</section>
+
+<section class="section guarantee fade">
+  <h2>🛡️ ضمان بدون مخاطرة</h2>
+  <p>تعديلات كاملة خلال أول 7 أيام أو إيقاف العمل دون أي التزام.</p>
+</section>
+
+<section class="section price fade">
+  <h2>السعر</h2>
+  <p><strong>يبدأ من 299$</strong></p>
+</section>
+
+<section class="section fade" style="text-align:center;">
+  <h2>جاهز للانطلاق؟</h2>
+  <a class="cta" href="https://wa.me/+213656604882">احجز الآن</a>
+</section>
+
+<footer>
+  © ModeWeb – جميع الحقوق محفوظة
+</footer>
+
+</div>
+
+</body>
+</html>
