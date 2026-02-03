@@ -1,327 +1,176 @@
 <!DOCTYPE html>
-<html lang="ar"">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mode Web مود ويب - نصنع المستقبل الرقمي</title>
-    <meta name="description" content="مود ويب - شركة رائدة في تطوير المواقع والتطبيقات والحلول الرقمية المبتكرة">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+
+    <title>Mode Web | تصميم مواقع ووردبريس و SEO وأتمتة n8n</title>
+    <meta name="description" content="مود ويب – تصميم مواقع ووردبريس احترافية، تحسين محركات البحث SEO، وأتمتة الأعمال باستخدام n8n.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+<a 
+  href="https://wa.me/213656604882?text=مرحبا%20اريد%20الاستفسار%20عن%20خدماتكم"
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="تواصل عبر واتساب">
+  💬
+</a>
+    
 <body>
-    <!-- Animated Grid Background -->
-    <div class="grid-bg"></div>
-    <div class="gradient-overlay"></div>
-    <div class="scanlines"></div>
 
-    <!-- Animated Shapes -->
-    <div class="shapes-container">
-        <div class="shape shape-circle"></div>
-        <div class="shape shape-triangle"></div>
-        <div class="shape shape-square"></div>
-    </div>
-
-    <!-- Floating Particles -->
-    <div id="particles"></div>
-
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo-link">
-                <svg class="logo-svg" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#3282B8;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#1B263B;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    <polygon points="20,2 38,14 38,26 20,38 2,26 2,14" fill="none" stroke="url(#logoGradient)" stroke-width="2"/>
-                    <polygon points="20,8 32,16 32,24 20,32 8,24 8,16" fill="url(#logoGradient)" opacity="0.3"/>
-                    <circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
-                </svg>
-                <span class="logo-text">مود ويب</span>
-            </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="nav-link">الرئيسية</a></li>
-                <li><a href="#features" class="nav-link">الخدمات</a></li>
-                <li><a href="#about" class="nav-link">حولنا</a></li>
-                <li><a href="#contact" class="nav-link">تواصل معنا</a></li>
-            </ul>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+    <nav class="navbar">
+        <div class="logo">مود ويب</div>
+        <ul class="nav-links">
+            <li><a href="#services">الخدمات</a></li>
+            <li><a href="#portfolio">أعمالنا</a></li>
+            <li><a href="#testimonials">آراء العملاء</a></li>
+            <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="text-rotator">
-                <div class="text-set active">
-                    <h1 class="glitch-text" data-text="FUTURE IS NOW">مود ويب</h1>
-                    <p class="subtitle">ادخل إلى البُعد القادم من الابتكار الرقمي</p>
-                </div>
-                <div class="text-set">
-                    <h1 class="glitch-text" data-text="BEYOND LIMITS">تخطَّى الحدود</h1>
-                    <p class="subtitle">حيث تلتقي التقنية بإمكانات لا نهائية</p>
-                </div>
-                <div class="text-set">
-                    <h1 class="glitch-text" data-text="ELECTRIC DREAMS">أحلام رقمية</h1>
-                    <p class="subtitle">نُحرّك الثورة الرقمية القادمة... اليوم</p>
-                </div>
-            </div>
+    <div class="hero-content">
+        <h1>نحو مستقبل رقمي أقوى 🚀</h1>
+        <p>
+            نصمم مواقع ووردبريس سريعة، نرفع ترتيبك في جوجل،
+            ونؤتمت أعمالك باستخدام n8n
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#services" class="btn primary">ابدأ مشروعك</a>
+            <a href="#portfolio" class="btn secondary">شاهد أعمالنا</a>
         </div>
-        <div class="cta-container">
-            <a href="#features" class="cta-button cta-primary">ابدأ الآن</a>
-            <a href="#about" class="cta-button cta-secondary">اعرف المزيد</a>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Features Section with Tabs -->
-    <section class="features" id="features">
-        <h2 class="section-title">خدماتنا المتميزة</h2>
-        <div class="features-container">
-            <div class="feature-tabs">
-                <div class="tab-item active" data-tab="performance">
-                    <span class="tab-icon">⚡</span>
-                    <span>تطوير المواقع</span>
-                </div>
-                <div class="tab-item" data-tab="security">
-                    <span class="tab-icon">📱</span>
-                    <span>تطبيقات الموبايل</span>
-                </div>
-                <div class="tab-item" data-tab="network">
-                    <span class="tab-icon">🎨</span>
-                    <span>التصميم الإبداعي</span>
-                </div>
-                <div class="tab-item" data-tab="analytics">
-                    <span class="tab-icon">🛒</span>
-                    <span>المتاجر الإلكترونية</span>
-                </div>
-                <div class="tab-item" data-tab="integration">
-                    <span class="tab-icon">🔧</span>
-                    <span>الحلول التقنية</span>
-                </div>
-            </div>
+<!-- ================= SERVICES ================= -->
+<section class="services" id="services">
+    <h2 class="section-title">خدماتنا</h2>
 
-            <div class="feature-content">
-                <!-- تطوير المواقع -->
-                <div class="content-panel active" id="performance">
-                    <h3>تطوير المواقع الإلكترونية ⚡</h3>
-                    <p>
-                        نبني مواقع إلكترونية حديثة وسريعة باستخدام أحدث التقنيات والأدوات العالمية.
-                        مواقعنا متجاوبة مع جميع الأجهزة وتوفر تجربة استخدام استثنائية لزوارك.
-                    </p>
-                    <ul class="feature-list">
-                        <li>تصميم متجاوب يعمل على جميع الأجهزة (موبايل، تابلت، كمبيوتر)</li>
-                        <li>سرعة تحميل فائقة تحسن ترتيبك في محركات البحث</li>
-                        <li>أمان متقدم وحماية من الاختراقات</li>
-                        <li>تحسين محركات البحث (SEO) مدمج</li>
-                        <li>لوحة تحكم سهلة الاستخدام</li>
-                    </ul>
-                </div>
+    <div class="services-grid">
 
-                <!-- تطبيقات الموبايل -->
-                <div class="content-panel" id="security">
-                    <h3>تطبيقات الموبايل الاحترافية 📱</h3>
-                    <p>
-                        نصمم ونطور تطبيقات ذكية لنظامي iOS و Android بأعلى معايير الجودة.
-                        تطبيقاتنا سهلة الاستخدام وتقدم أداءً ممتازًا وتجربة مستخدم رائعة.
-                    </p>
-                    <ul class="feature-list">
-                        <li>تطوير تطبيقات iOS و Android الأصلية</li>
-                        <li>واجهات مستخدم جذابة وسهلة الاستخدام</li>
-                        <li>أداء عالي وسرعة استجابة فورية</li>
-                        <li>تكامل مع الخدمات السحابية</li>
-                        <li>دعم فني مستمر وتحديثات دورية</li>
-                    </ul>
-                </div>
-
-                <!-- التصميم الإبداعي -->
-                <div class="content-panel" id="network">
-                    <h3>التصميم الإبداعي والهوية البصرية 🎨</h3>
-                    <p>
-                        نقدم خدمات تصميم متكاملة تشمل الهوية البصرية، الشعارات، والمواد التسويقية.
-                        تصاميمنا تعكس هوية علامتك التجارية وتجذب جمهورك المستهدف.
-                    </p>
-                    <ul class="feature-list">
-                        <li>تصميم الهوية البصرية الكاملة للشركات</li>
-                        <li>تصميم شعارات احترافية ومميزة</li>
-                        <li>تصميم المواد التسويقية (بروشورات، كروت، بنرات)</li>
-                        <li>تصميم واجهات المستخدم (UI/UX)</li>
-                        <li>تصميم المحتوى البصري لمواقع التواصل</li>
-                    </ul>
-                </div>
-
-                <!-- المتاجر الإلكترونية -->
-                <div class="content-panel" id="analytics">
-                    <h3>المتاجر الإلكترونية الاحترافية 🛒</h3>
-                    <p>
-                        نبني متاجر إلكترونية متكاملة تساعدك على بيع منتجاتك أونلاين بسهولة.
-                        متاجرنا آمنة، سريعة، وتدعم جميع طرق الدفع الإلكتروني.
-                    </p>
-                    <ul class="feature-list">
-                        <li>تصميم متجر إلكتروني متكامل مع لوحة تحكم قوية</li>
-                        <li>دعم بوابات الدفع الإلكتروني المختلفة</li>
-                        <li>نظام إدارة المخزون والطلبات</li>
-                        <li>تكامل مع شركات الشحن</li>
-                        <li>تقارير وتحليلات مفصلة للمبيعات</li>
-                    </ul>
-                </div>
-
-                <!-- الحلول التقنية -->
-                <div class="content-panel" id="integration">
-                    <h3>الحلول التقنية المتقدمة 🔧</h3>
-                    <p>
-                        نقدم حلول تقنية مخصصة تناسب احتياجات عملك الخاصة.
-                        من أنظمة إدارة المحتوى إلى الأنظمة المعقدة، نحن شريكك التقني الموثوق.
-                    </p>
-                    <ul class="feature-list">
-                        <li>تطوير أنظمة إدارة مخصصة (CRM, ERP)</li>
-                        <li>تكامل الأنظمة والخدمات المختلفة</li>
-                        <li>الحلول السحابية والاستضافة</li>
-                        <li>خدمات الأمن السيبراني والحماية</li>
-                        <li>الاستشارات التقنية وتحليل الأعمال</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <h2 class="section-title">حول مود ويب ⚡</h2>
-
-        <div class="about-content">
-            <div class="about-text">
-                <h2>ريادة في عالم التحول الرقمي</h2>
-                <p>
-                    في <strong>مود ويب</strong>، نحن لا نبني التقنية فحسب — بل نصنع المستقبل.
-                    مهمتنا هي سدّ الفجوة بين الإمكانات البشرية والابتكار الرقمي، من خلال
-                    ابتكار حلول تمكّن الأفراد وتُحدث تحولًا حقيقيًا في الصناعات.
-                </p>
-                <p>
-                    تأسست <strong>مود ويب</strong> على يد رواد رأوا ما وراء حدود التقنية الحالية،
-                    لتكون قفزة نوعية في البنية التحتية الرقمية. نجمع بين البحث المتقدم
-                    والتطبيق العملي لتقديم حلول تجمع بين الثورة والموثوقية.
-                </p>
-                <p>
-                    انضم إلينا ونحن نُعيد تعريف الممكن في العصر الرقمي.
-                    فالمستقبل ليس شيئًا ننتظره — بل نصنعه معًا.
-                </p>
-            </div>
-
-            <div class="about-visual">
-                <div class="about-graphic"></div>
-            </div>
-        </div>
-
-        <!-- الصف الثاني -->
-        <div class="about-content" style="margin-top: 80px;">
-            <div class="about-visual">
-                <div class="about-graphic-alt">
-                    <div class="hexagon"></div>
-                    <div class="hexagon"></div>
-                    <div class="hexagon"></div>
-                </div>
-            </div>
-
-            <div class="about-text">
-                <h2>الابتكار في كل مستوى 🚀</h2>
-                <p>
-                    التزامنا بالتميّز يدفعنا إلى تجاوز الحدود وكسر المألوف.
-                    مع فريق من المهندسين والمبدعين أصحاب الرؤية، نصمم حلولًا
-                    لا تلبّي احتياجات اليوم فحسب، بل تستبق تحديات الغد.
-                </p>
-                <p>
-                    من تطوير المواقع إلى تطبيقات الموبايل، ومن التصميم الإبداعي إلى الحلول التقنية،
-                    نحن في طليعة كل ثورة رقمية. نهجنا المتكامل يضمن أن كل مشروع
-                    يُبنى بأعلى معايير الجودة، ليُحدث تأثيرًا مضاعفًا ومستدامًا.
-                </p>
-                <p>
-                    اختبر قوة التحول الرقمي الحقيقي.  
-                    مع <strong>مود ويب</strong>، أنت لا تتبنى التكنولوجيا فقط — بل تنضم إلى
-                    فلسفة التطور المستمر والإمكانات اللامحدودة.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact" dir="rtl">
-        <h2 class="section-title">تواصل معنا</h2>
-        <div class="contact-container">
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">الاسم الكامل</label>
-                        <input type="text" id="name" name="name" required placeholder="اكتب اسمك الكامل">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">البريد الإلكتروني</label>
-                        <input type="email" id="email" name="email" required placeholder="example@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">الموضوع</label>
-                        <input type="text" id="subject" name="subject" required placeholder="موضوع الرسالة">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">الرسالة</label>
-                        <textarea id="message" name="message" required placeholder="اكتب رسالتك هنا..."></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">إرسال الرسالة</button>
-                </form>
-            </div>
-
-            <div class="contact-info">
-                <h3>تواصل معنا مباشرة</h3>
-
-                <div class="info-item">
-                    <div class="info-icon">📧</div>
-                    <div class="info-details">
-                        <h4>البريد الإلكتروني</h4>
-                        <p>modeweb2025@gmail.com</p>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-icon">📱</div>
-                    <div class="info-details">
-                        <h4>رقم الهاتف</h4>
-                        <p dir="ltr">+213 656 604 882</p>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-icon">🌐</div>
-                    <div class="info-details">
-                        <h4>موقعنا الإلكتروني</h4>
-                        <p>www.modeweb.com</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#home">الرئيسية</a>
-                <a href="#features">الخدمات</a>
-                <a href="#about">حولنا</a>
-                <a href="#contact">تواصل معنا</a>
-            </div>
-            <p class="copyright">
-                © 2025 شركة مود ويب. جميع الحقوق محفوظة.<br>
-                نصنع غدًا… اليوم.
+        <div class="service-card">
+            <h3>تصميم مواقع ووردبريس</h3>
+            <p>
+                مواقع احترافية، سريعة، ومتجاوبة مع جميع الأجهزة.
             </p>
+            <ul>
+                <li>تصميم مخصص</li>
+                <li>سرعة عالية</li>
+                <li>أمان وحماية</li>
+            </ul>
         </div>
-    </footer>
 
-    <script src="main.js"></script>
+        <div class="service-card">
+            <h3>تحسين محركات البحث SEO</h3>
+            <p>
+                نساعد موقعك على الظهور في الصفحة الأولى من جوجل.
+            </p>
+            <ul>
+                <li>SEO تقني</li>
+                <li>تحسين المحتوى</li>
+                <li>رفع سرعة الموقع</li>
+            </ul>
+        </div>
+
+        <div class="service-card">
+            <h3>أتمتة الأعمال n8n</h3>
+            <p>
+                أتمتة ذكية لتوفير الوقت وزيادة الإنتاجية.
+            </p>
+            <ul>
+                <li>ربط الأنظمة</li>
+                <li>Workflows ذكية</li>
+                <li>تقليل الأخطاء</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= PORTFOLIO ================= -->
+<section class="portfolio" id="portfolio">
+    <h2 class="section-title">أعمالنا</h2>
+
+    <div class="portfolio-grid">
+        <div class="portfolio-item">
+            <h4>متجر إلكتروني</h4>
+            <p>WooCommerce + SEO</p>
+        </div>
+
+        <div class="portfolio-item">
+            <h4>موقع شركة</h4>
+            <p>WordPress Custom</p>
+        </div>
+
+        <div class="portfolio-item">
+            <h4>نظام أتمتة</h4>
+            <p>n8n + APIs</p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="testimonials" id="testimonials">
+    <h2 class="section-title">آراء العملاء</h2>
+
+    <div class="testimonials-grid">
+        <div class="testimonial">
+            <p>
+                "موقعنا أصبح أسرع وتصدر نتائج البحث خلال فترة قصيرة."
+            </p>
+            <span>— صاحب متجر إلكتروني</span>
+        </div>
+
+        <div class="testimonial">
+            <p>
+                "احترافية عالية وتنفيذ دقيق، أنصح بهم بشدة."
+            </p>
+            <span>— شركة خدمات رقمية</span>
+        </div>
+
+        <div class="testimonial">
+            <p>
+                "أتمتة n8n وفرت علينا ساعات عمل يوميًا."
+            </p>
+            <span>— مدير مشروع</span>
+        </div>
+    </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+    <h2 class="section-title">من نحن</h2>
+    <p class="about-text">
+        <strong>مود ويب</strong> شركة متخصصة في الحلول الرقمية،
+        نساعد الشركات ورواد الأعمال على بناء حضور رقمي قوي
+        باستخدام أحدث التقنيات.
+    </p>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+    <h2 class="section-title">تواصل معنا</h2>
+
+    <form class="contact-form">
+        <input type="text" placeholder="اسمك" required>
+        <input type="email" placeholder="بريدك الإلكتروني" required>
+        <textarea placeholder="رسالتك"></textarea>
+        <button type="submit">إرسال</button>
+    </form>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <p>© 2025 Mode Web – جميع الحقوق محفوظة</p>
+</footer>
+
 </body>
 </html>
