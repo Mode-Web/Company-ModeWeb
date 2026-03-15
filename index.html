@@ -1,637 +1,323 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Mode Web | تصميم مواقع</title>
-<meta name="description" content="مود ويب Mode Web وكالة جزائرية متخصصة في تصميم المواقع،   وتحسين محركات البحث لمساعدة الشركات على النمو رقمياً."/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mode Web | وكالة تصميم مواقع احترافية</title>
+    <meta name="description" content="مود ويب Mode Web وكالة جزائرية متخصصة في تصميم المواقع، وتحسين محركات البحث لمساعدة الشركات على النمو رقمياً.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0d7ff2',
+                    }
+                }
+            }
+        }
+    </script>
 
-<script>
-tailwind.config = {
-  darkMode:"class",
-  theme:{
-    extend:{
-      colors:{
-        primary:"#0d7ff2",
-        "background-light":"#f0f2f5",
-        "background-dark":"#101922"
-      },
-      fontFamily:{
-        display:["Cairo", "sans-serif"]
-      }
-    }
-  }
-}
-</script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f0f2f5;
+        }
 
-<style>
-  * { font-family: 'Cairo', sans-serif; }
+        .grad-text {
+            background: linear-gradient(135deg, #0d7ff2, #00c6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-  /* ===== FADE-IN ON SCROLL ===== */
-  .reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .reveal-left {
-    opacity: 0;
-    transform: translateX(-40px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal-left.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  .reveal-right {
-    opacity: 0;
-    transform: translateX(40px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal-right.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
+        .cta-bg {
+            background: linear-gradient(135deg, #0d7ff2, #0055c4, #00c6ff, #0d7ff2);
+            background-size: 300% 300%;
+            animation: gradientShift 6s ease infinite;
+        }
 
-  /* stagger children */
-  .stagger > *:nth-child(1) { transition-delay: 0.1s; }
-  .stagger > *:nth-child(2) { transition-delay: 0.2s; }
-  .stagger > *:nth-child(3) { transition-delay: 0.3s; }
-  .stagger > *:nth-child(4) { transition-delay: 0.4s; }
+        @keyframes gradientShift {
+            0%   { background-position: 0% 50%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-  /* ===== HERO ENTRANCE ===== */
-  @keyframes heroFadeUp {
-    from { opacity:0; transform: translateY(30px); }
-    to   { opacity:1; transform: translateY(0); }
-  }
-  .hero-text { animation: heroFadeUp 0.9s ease forwards; }
-  .hero-text-delay { animation: heroFadeUp 0.9s 0.2s ease both; }
-  .hero-btn { animation: heroFadeUp 0.9s 0.4s ease both; }
-  .hero-img { animation: heroFadeUp 0.9s 0.3s ease both; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
 
-  /* ===== FLOATING IMAGE ===== */
-  @keyframes float {
-    0%,100% { transform: translateY(0); }
-    50%      { transform: translateY(-12px); }
-  }
-  .float-anim { animation: float 5s ease-in-out infinite; }
+        .float-anim {
+            animation: float 5s ease-in-out infinite;
+        }
 
-  /* ===== PULSE BUTTON ===== */
-  @keyframes pulse-ring {
-    0%   { box-shadow: 0 0 0 0 rgba(13,127,242,0.5); }
-    70%  { box-shadow: 0 0 0 14px rgba(13,127,242,0); }
-    100% { box-shadow: 0 0 0 0 rgba(13,127,242,0); }
-  }
-  .btn-pulse { animation: pulse-ring 2.2s infinite; }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
 
-  /* ===== COUNTER ===== */
-  .counter { transition: all 0.3s; }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-  /* ===== GRADIENT TEXT ===== */
-  .grad-text {
-    background: linear-gradient(135deg,#0d7ff2,#00c6ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+        .wa-float {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            z-index: 100;
+            background-color: #25d366;
+            color: white;
+            padding: 16px;
+            border-radius: 50%;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            transition: transform 0.3s;
+        }
 
-  /* ===== CTA SECTION ===== */
-  @keyframes gradientShift {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  .cta-bg {
-    background: linear-gradient(135deg, #0d7ff2, #0055c4, #00c6ff, #0d7ff2);
-    background-size: 300% 300%;
-    animation: gradientShift 6s ease infinite;
-  }
-
-  /* ===== WHATSAPP FLOAT ===== */
-  @keyframes waBounce {
-    0%,100% { transform: scale(1); }
-    50%     { transform: scale(1.12); }
-  }
-  .wa-float {
-    position: fixed;
-    bottom: 28px;
-    left: 28px;
-    z-index: 999;
-    background: #25d366;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 20px rgba(37,211,102,0.5);
-    animation: waBounce 2.5s ease-in-out infinite;
-    text-decoration: none;
-    transition: transform 0.2s;
-  }
-  .wa-float:hover { transform: scale(1.2) !important; animation: none; }
-
-  /* ===== CARDS HOVER ===== */
-  .service-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(13,127,242,0.15);
-  }
-
-  /* ===== STATS COUNT UP ===== */
-  .stat-num { display: inline-block; }
-
-  /* ===== NAV LINK ===== */
-  nav a {
-    position: relative;
-    transition: color 0.2s;
-  }
-  nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px; right: 0;
-    width: 0; height: 2px;
-    background: #0d7ff2;
-    transition: width 0.3s ease;
-  }
-  nav a:hover::after { width: 100%; }
-  nav a:hover { color: #0d7ff2; }
-
-  /* ===== TESTIMONIAL HOVER ===== */
-  .testi-card {
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .testi-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 32px rgba(0,0,0,0.1);
-  }
-
-  /* mobile nav */
-  #mobile-menu { transition: max-height 0.4s ease, opacity 0.4s ease; max-height: 0; opacity: 0; overflow: hidden; }
-  #mobile-menu.open { max-height: 300px; opacity: 1; }
-</style>
+        .wa-float:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
+<body class="text-slate-900">
 
-<body class="bg-background-light font-display text-slate-900">
-
-<!-- ===== WHATSAPP FLOATING BUTTON ===== -->
-<a href="https://wa.me/213656604882?text=السلام عليكم، أريد الاستفسار عن خدماتكم" 
-   class="wa-float" target="_blank" title="تواصل عبر واتساب">
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-  </svg>
-</a>
-
-<!-- ===== HEADER ===== -->
-<header class="sticky top-0 z-50 backdrop-blur-md border-b bg-white/90 shadow-sm">
-  <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
-    <div class="flex items-center gap-2">
-      <div class="bg-primary p-2 rounded-lg">
-        <span class="material-symbols-outlined text-white">rocket_launch</span>
-      </div>
-      <h1 class="text-xl font-bold">Mode Web</h1>
-    </div>
-
-    <nav class="hidden md:flex gap-8 text-slate-700 font-semibold">
-      <a href="#">الرئيسية</a>
-      <a href="#services">الخدمات</a>
-      <a href="#portfolio">أعمالنا</a>
-      <a href="#contact">اتصل بنا</a>
-    </nav>
-
-    <a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg font-bold btn-pulse hover:bg-blue-600 transition">
-      <span class="material-symbols-outlined text-sm">chat</span>
-      تواصل الآن
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/213656604882" target="_blank" class="wa-float">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
     </a>
 
-    <!-- mobile toggle -->
-    <button id="menu-toggle" class="md:hidden p-2 rounded-lg border" onclick="document.getElementById('mobile-menu').classList.toggle('open')">
-      <span class="material-symbols-outlined">menu</span>
-    </button>
-  </div>
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5">
+        <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="bg-primary p-2 rounded-xl shadow-lg shadow-blue-500/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.71.79-1.81.19-2.55-.74-.6-1.84-.52-2.55.19z"></path><path d="M9 12l3.5 3.5"></path><path d="M16.25 10.25l-4.5 4.5"></path><path d="M19.8 3.42a.52.52 0 0 0-.4-.4l-3.86-1a.52.52 0 0 0-.61.37l-2.05 6.38a.52.52 0 0 0 .2.58l.72.54a.52.52 0 0 0 .58 0l.54-.72a.52.52 0 0 0 .58-.2l6.38-2.05a.52.52 0 0 0 .37-.61l-1-3.86z"></path><path d="M10 10l-6 6"></path></svg>
+                </div>
+                <h1 class="text-2xl font-black tracking-tight">Mode Web</h1>
+            </div>
 
-  <!-- mobile menu -->
-  <div id="mobile-menu" class="md:hidden bg-white border-t px-4 pb-4">
-    <nav class="flex flex-col gap-3 pt-3 text-slate-700 font-semibold">
-      <a href="#" class="py-1">الرئيسية</a>
-      <a href="#services" class="py-1">الخدمات</a>
-      <a href="#portfolio" class="py-1">أعمالنا</a>
-      <a href="#contact" class="py-1">اتصل بنا</a>
-      <a href="#contact" class="bg-primary text-white text-center py-2 rounded-lg font-bold mt-2">تواصل الآن</a>
-    </nav>
-  </div>
-</header>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#" class="text-slate-700 font-bold hover:text-primary transition-colors">الرئيسية</a>
+                <a href="#services" class="text-slate-700 font-bold hover:text-primary transition-colors">الخدمات</a>
+                <a href="#portfolio" class="text-slate-700 font-bold hover:text-primary transition-colors">أعمالنا</a>
+                <a href="#contact" class="text-slate-700 font-bold hover:text-primary transition-colors">اتصل بنا</a>
+            </nav>
 
-<!-- ===== HERO ===== -->
-<section class="py-20 overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-    <div class="text-right">
-      <div class="inline-block bg-blue-100 text-primary text-sm font-bold px-4 py-1 rounded-full mb-4 hero-text">
-         وكالة رقمية جزائرية
-      </div>
-      <h2 class="text-5xl font-black mb-6 leading-tight hero-text">
-        حول فكرتك إلى <span class="grad-text">موقع احترافي</span>
-      </h2>
-      <p class="text-lg text-slate-600 mb-8 hero-text-delay">
-        نساعد أصحاب المشاريع في الجزائر على إنشاء مواقع احترافية
-        تزيد المصداقية وتجلب زبائن جدد عبر الإنترنت.
-      </p>
-      <div class="flex gap-4 justify-end flex-wrap hero-btn">
-        <a href="#contact" class="bg-primary text-white px-8 py-3 rounded-lg font-bold btn-pulse hover:bg-blue-600 transition inline-flex items-center gap-2">
-          <span class="material-symbols-outlined">arrow_back</span>
-          ابدأ مشروعك الآن
-        </a>
-        <a href="#portfolio" class="border-2 border-primary text-primary px-8 py-3 rounded-lg font-bold hover:bg-blue-50 transition inline-flex items-center gap-2">
-          شاهد أعمالنا
-        </a>
-      </div>
-    </div>
-
-    <div class="hero-img">
-      <img class="rounded-xl shadow-2xl float-anim"
-        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700&q=80"
-        alt="تصميم مواقع"/>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SERVICES ===== -->
-<section class="py-20 bg-white" id="services">
-  <div class="max-w-7xl mx-auto px-4">
-    <div class="text-center mb-16 reveal">
-      <h3 class="text-4xl font-black mb-4">خدماتنا</h3>
-      <p class="text-slate-500">حلول رقمية تساعد مشروعك على النمو</p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-8 stagger">
-      <div class="p-8 border rounded-xl service-card reveal bg-gradient-to-br from-white to-blue-50">
-        <div class="bg-blue-100 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
-          <span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden md:block bg-primary text-white px-6 py-2.5 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-md shadow-blue-600/20">تواصل الآن</a>
+                <button id="menu-btn" class="md:hidden p-2 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </div>
         </div>
-        <h4 class="font-bold text-xl mb-2">تصميم المواقع</h4>
-        <p class="text-slate-600">إنشاء مواقع احترافية سريعة ومتجاوبة مع جميع الأجهزة.</p>
-      </div>
 
-      <div class="p-8 border rounded-xl service-card reveal bg-gradient-to-br from-white to-purple-50">
-        <div class="bg-purple-100 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
-          <span class="material-symbols-outlined text-purple-500 text-3xl">phone_iphone</span>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t absolute top-full left-0 right-0 shadow-xl">
+            <div class="px-4 py-6 flex flex-col gap-4">
+                <a href="#" class="text-lg font-bold text-slate-700 py-2">الرئيسية</a>
+                <a href="#services" class="text-lg font-bold text-slate-700 py-2">الخدمات</a>
+                <a href="#portfolio" class="text-lg font-bold text-slate-700 py-2">أعمالنا</a>
+                <a href="#contact" class="text-lg font-bold text-slate-700 py-2">اتصل بنا</a>
+                <a href="#contact" class="bg-primary text-white text-center py-3 rounded-xl font-bold mt-2">تواصل الآن</a>
+            </div>
         </div>
-        <h4 class="font-bold text-xl mb-2">تطبيقات الهاتف</h4>
-        <p class="text-slate-600">برمجة تطبيقات Android و iOS بأحدث التقنيات.</p>
-      </div>
+    </header>
 
-      <div class="p-8 border rounded-xl service-card reveal bg-gradient-to-br from-white to-green-50">
-        <div class="bg-green-100 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
-          <span class="material-symbols-outlined text-green-500 text-3xl">query_stats</span>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="text-right">
+                <div class="inline-block bg-blue-100 text-primary text-sm font-bold px-4 py-1.5 rounded-full mb-6">وكالة رقمية جزائرية 🇩🇿</div>
+                <h2 class="text-4xl md:text-6xl font-black mb-6 leading-tight">حول فكرتك إلى <br><span class="grad-text">موقع احترافي</span></h2>
+                <p class="text-lg text-slate-600 mb-10 leading-relaxed max-w-xl ml-auto">نساعد أصحاب المشاريع في الجزائر على إنشاء مواقع احترافية تزيد المصداقية وتجلب زبائن جدد عبر الإنترنت.</p>
+                <div class="flex flex-wrap gap-4 justify-end">
+                    <a href="#contact" class="bg-primary text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-700 transition-all shadow-xl shadow-blue-600/30 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                        ابدأ مشروعك الآن
+                    </a>
+                    <a href="#portfolio" class="border-2 border-primary text-primary px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-50 transition-all">شاهد أعمالنا</a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute inset-0 bg-blue-600/10 blur-3xl rounded-full"></div>
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80" alt="Web Design" class="rounded-3xl shadow-2xl relative z-10 float-anim">
+            </div>
         </div>
-        <h4 class="font-bold text-xl mb-2">SEO</h4>
-        <p class="text-slate-600">تحسين ظهور موقعك في Google لجلب زبائن مهتمين بخدماتك.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ===== WHY ===== -->
-<section class="py-24">
-  <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-    <div class="reveal-left">
-      <img class="rounded-xl shadow-xl float-anim"
-        src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=700&q=80"
-        alt="أهمية الموقع الإلكتروني"/>
-    </div>
-    <div class="text-right reveal-right">
-      <h3 class="text-4xl font-black mb-6">
-        علاش الموقع مهم لأي مشروع؟
-      </h3>
-      <p class="text-slate-600 mb-8 text-lg leading-relaxed">
-        اليوم أغلب الزبائن في الجزائر قبل ما يشتروا أو يتعاملوا مع أي خدمة،
-        أول حاجة يديروها هي البحث في Google. إذا مشروعك ما عندوش موقع إلكتروني،
-        غالباً الزبون يروح مباشرة للمنافس.
-      </p>
-      <ul class="space-y-4 mb-8">
-        <li class="flex items-center gap-3 justify-end">
-          <span class="font-semibold">بناء الثقة مع الزبائن</span>
-          <div class="bg-blue-100 p-1.5 rounded-full"><span class="material-symbols-outlined text-primary text-sm">check</span></div>
-        </li>
-        <li class="flex items-center gap-3 justify-end">
-          <span class="font-semibold">مشروعك متواجد 24/24</span>
-          <div class="bg-blue-100 p-1.5 rounded-full"><span class="material-symbols-outlined text-primary text-sm">check</span></div>
-        </li>
-        <li class="flex items-center gap-3 justify-end">
-          <span class="font-semibold">جلب زبائن من Google</span>
-          <div class="bg-blue-100 p-1.5 rounded-full"><span class="material-symbols-outlined text-primary text-sm">check</span></div>
-        </li>
-        <li class="flex items-center gap-3 justify-end">
-          <span class="font-semibold">توسيع نشاطك في كل الجزائر</span>
-          <div class="bg-blue-100 p-1.5 rounded-full"><span class="material-symbols-outlined text-primary text-sm">check</span></div>
-        </li>
-      </ul>
-      <a href="#contact" class="inline-flex items-center gap-2 bg-primary text-white px-7 py-3 rounded-lg font-bold hover:bg-blue-600 transition">
-        ابدأ معنا اليوم
-        <span class="material-symbols-outlined">arrow_back</span>
-      </a>
-    </div>
-  </div>
-</section>
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h3 class="text-3xl md:text-4xl font-black mb-4">خدماتنا</h3>
+                <p class="text-slate-500 text-lg">حلول رقمية تساعد مشروعك على النمو</p>
+            </div>
 
-<!-- ===== PORTFOLIO ===== -->
-<section class="py-24 bg-white" id="portfolio">
-  <div class="max-w-7xl mx-auto px-4">
-    <div class="text-center mb-16 reveal">
-      <h2 class="text-4xl font-black mb-4">أعمالنا الأخيرة</h2>
-      <p class="text-slate-500">استعرض بعض المشاريع الناجحة التي نفذناها لعملائنا</p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-8 stagger">
-      <div class="border rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 reveal hover:-translate-y-2">
-        <div class="h-48 flex items-center justify-center text-white text-xl font-bold"
-          style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-          متجر إلكتروني
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 border border-blue-100 rounded-3xl bg-blue-50 transition-all hover:-translate-y-2 hover:shadow-xl reveal">
+                    <div class="bg-white w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0d7ff2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                    </div>
+                    <h4 class="font-bold text-2xl mb-3">تصميم المواقع</h4>
+                    <p class="text-slate-600 leading-relaxed">إنشاء مواقع احترافية سريعة ومتجاوبة مع جميع الأجهزة.</p>
+                </div>
+                <div class="p-8 border border-purple-100 rounded-3xl bg-purple-50 transition-all hover:-translate-y-2 hover:shadow-xl reveal">
+                    <div class="bg-white w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                    </div>
+                    <h4 class="font-bold text-2xl mb-3">تطبيقات الهاتف</h4>
+                    <p class="text-slate-600 leading-relaxed">برمجة تطبيقات Android و iOS بأحدث التقنيات.</p>
+                </div>
+                <div class="p-8 border border-green-100 rounded-3xl bg-green-50 transition-all hover:-translate-y-2 hover:shadow-xl reveal">
+                    <div class="bg-white w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    </div>
+                    <h4 class="font-bold text-2xl mb-3">SEO</h4>
+                    <p class="text-slate-600 leading-relaxed">تحسين ظهور موقعك في Google لجلب زبائن مهتمين بخدماتك.</p>
+                </div>
+            </div>
         </div>
-        <div class="p-6 text-right">
-          <h4 class="font-bold text-lg mb-2">متجر إلكتروني احترافي</h4>
-          
-    
-          <a href="#contact" class="text-primary font-semibold hover:underline inline-flex items-center gap-1">
-            تواصل معنا <span class="material-symbols-outlined text-sm">arrow_back</span>
-          </a>
+    </section>
+
+    <!-- Why Section -->
+    <section class="py-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80" alt="Development" class="rounded-3xl shadow-2xl">
+            </div>
+            <div class="text-right reveal">
+                <h3 class="text-3xl md:text-4xl font-black mb-8 leading-tight">علاش الموقع مهم لأي مشروع؟</h3>
+                <p class="text-slate-600 mb-10 text-lg leading-relaxed">اليوم أغلب الزبائن في الجزائر قبل ما يشتروا أو يتعاملوا مع أي خدمة، أول حاجة يديروها هي البحث في Google. إذا مشروعك ما عندوش موقع إلكتروني، غالباً الزبون يروح مباشرة للمنافس.</p>
+                <div class="space-y-5 mb-10">
+                    <div class="flex items-center gap-4 justify-end">
+                        <span class="font-bold text-slate-700">بناء الثقة مع الزبائن</span>
+                        <div class="bg-blue-100 p-1.5 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d7ff2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    </div>
+                    <div class="flex items-center gap-4 justify-end">
+                        <span class="font-bold text-slate-700">مشروعك متواجد 24/24</span>
+                        <div class="bg-blue-100 p-1.5 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d7ff2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    </div>
+                    <div class="flex items-center gap-4 justify-end">
+                        <span class="font-bold text-slate-700">جلب زبائن من Google</span>
+                        <div class="bg-blue-100 p-1.5 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d7ff2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    </div>
+                </div>
+                <a href="#contact" class="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20">
+                    ابدأ معنا اليوم
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                </a>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="border rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 reveal hover:-translate-y-2">
-        <div class="h-48 flex items-center justify-center text-white text-xl font-bold"
-          style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-          موقع شركة
+    <!-- CTA Section -->
+    <section id="contact" class="py-24">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="cta-bg rounded-[2.5rem] p-10 md:p-20 text-center text-white shadow-2xl relative overflow-hidden reveal">
+                <div class="relative z-10">
+                    <div class="text-6xl mb-8">🚀</div>
+                    <h2 class="text-3xl md:text-5xl font-black mb-6">مستعد تبدأ مشروعك؟</h2>
+                    <p class="text-lg md:text-xl opacity-90 mb-12 max-w-2xl mx-auto leading-relaxed">تواصل معنا اليوم واحصل على استشارة مجانية. فريقنا جاهز لمساعدتك تبني حضورك الرقمي.</p>
+
+                    <div class="flex flex-col md:flex-row gap-5 justify-center items-center">
+                        <a href="https://wa.me/213656604882" class="w-full md:w-auto flex items-center justify-center gap-3 bg-[#25d366] hover:bg-green-500 text-white px-10 py-5 rounded-2xl font-bold text-xl transition-all hover:scale-105 shadow-xl">
+                            واتساب
+                        </a>
+                        <a href="mailto:info@modeweb.site" class="w-full md:w-auto flex items-center justify-center gap-3 bg-white text-primary hover:bg-blue-50 px-10 py-5 rounded-2xl font-bold text-xl transition-all hover:scale-105 shadow-xl">
+                            إرسال إيميل
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="p-6 text-right">
-          <h4 class="font-bold text-lg mb-2">موقع شركة متقدم</h4>
-          <p class="text-primary text-sm font-semibold mb-2">WordPress Custom</p>
-          <p class="text-slate-600 text-sm mb-4">تصميم احترافي مع نظام إدارة محتوى قوي ومتقدم</p>
-          <a href="https://testmodeweb.rf.gd/" target="_blank" class="text-primary font-semibold hover:underline inline-flex items-center gap-1">
-            عرض المشروع <span class="material-symbols-outlined text-sm">arrow_back</span>
-          </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 bg-white border-t">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-16 text-right">
+                <div>
+                    <h4 class="text-2xl font-black mb-6">Mode Web</h4>
+                    <p class="text-slate-600 leading-relaxed text-lg">وكالة جزائرية متخصصة في تطوير المواقع ومساعدة الشركات على النجاح في العالم الرقمي.</p>
+                </div>
+                <div>
+                    <h4 class="font-black text-xl mb-8">الخدمات</h4>
+                    <ul class="space-y-4 text-slate-600 text-lg">
+                        <li>تصميم المواقع</li>
+                        <li>تطوير التطبيقات</li>
+                        <li>SEO</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-black text-xl mb-8">اتصل بنا</h4>
+                    <ul class="space-y-4 text-slate-600 text-lg">
+                        <li>الجزائر</li>
+                        <li>+213 6 56 60 48 82</li>
+                        <li>info@modeweb.site</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-20 pt-10 border-t text-center text-slate-400 font-medium">
+                © 2026 Mode Web — جميع الحقوق محفوظة
+            </div>
         </div>
-      </div>
+    </footer>
 
-      <div class="border rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 reveal hover:-translate-y-2">
-        <div class="h-48 flex items-center justify-center text-white text-xl font-bold"
-          style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-          أتمتة الأعمال
-        </div>
-        <div class="p-6 text-right">
-          <h4 class="font-bold text-lg mb-2">نظام أتمتة متطور</h4>
-          <p class="text-primary text-sm font-semibold mb-2">n8n + APIs</p>
-          <p class="text-slate-600 text-sm mb-4">توفير 20 ساعة عمل أسبوعياً من خلال الأتمتة الذكية</p>
-          <a href="#contact" class="text-primary font-semibold hover:underline inline-flex items-center gap-1">
-            تواصل معنا <span class="material-symbols-outlined text-sm">arrow_back</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <script>
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-3');
+                header.classList.remove('bg-transparent', 'py-5');
+            } else {
+                header.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-3');
+                header.classList.add('bg-transparent', 'py-5');
+            }
+        });
 
-<!-- ===== STATS ===== -->
-<section class="bg-primary py-16 text-white">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-4 text-center gap-8 stagger">
-    <div class="reveal">
-      <p class="text-5xl font-black stat-num" data-target="10">10</p>
-      <p class="mt-1 opacity-80">مشروع+</p>
-    </div>
-    <div class="reveal">
-      <p class="text-5xl font-black stat-num" data-target="10">7</p>
-      <p class="mt-1 opacity-80">عملاء+</p>
-    </div>
-    <div class="reveal">
-      <p class="text-5xl font-black stat-num" data-target="10">7</p>
-      <p class="mt-1 opacity-80">موقع مطور+</p>
-    </div>
-    <div class="reveal">
-      <p class="text-5xl font-black stat-num" data-target="1">1</p>
-      <p class="mt-1 opacity-80">سنوات خبرة+</p>
-    </div>
-  </div>
-</section>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-<!-- ===== TESTIMONIALS ===== -->
-<section class="py-24 bg-white" id="testimonials">
-  <div class="max-w-7xl mx-auto px-4">
-    <div class="text-center mb-16 reveal">
-      <h2 class="text-4xl font-black mb-4">آراء عملائنا</h2>
-      <p class="text-slate-500">ماذا يقول عملاؤنا عن خدماتنا</p>
-    </div>
+        // Close menu on link click
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
 
-    <div class="grid md:grid-cols-3 gap-8 stagger">
-      <div class="p-8 border rounded-xl testi-card reveal">
-        <div class="flex gap-1 mb-4 text-yellow-400">
-          <span class="material-symbols-outlined">star</span>
-          <span class="material-symbols-outlined">star</span>
-          <span class="material-symbols-outlined">star</span>
-          <span class="material-symbols-outlined">star</span>
-          <span class="material-symbols-outlined">star</span>
-        </div>
-        <p class="text-slate-600 mb-6 leading-relaxed">
-          "تبارك الله مشكور على الخدمة اتشرفت بمعرفتك إن شاء الله بالتوفيق والنجاح"
-        </p>
-        <div class="flex items-center gap-3">
-          <div class="bg-primary/20 text-primary p-2 rounded-full">
-            <span class="material-symbols-outlined">person</span>
-          </div>
-          
-        </div>
-      </div>
-
-      <div class="p-8 border rounded-xl testi-card reveal">
-        <div class="flex gap-1 mb-4 text-yellow-400">
-          <span class="material-symbols-outlined">star</span>
-          <span class="material-symbols-outlined">star</span>
-          <span class="material-symbols-outlined">star</span>
-          <span class="material-symbols-outlined">star</span>
-          <span class="material-symbols-outlined">star</span>
-        </div>
-        <p class="text-slate-600 mb-6 leading-relaxed">
-          "ثاني مرة أتعامل معك أستاذ محمد وما شاء الله ولا غلطة وشغل أفضل من الذي كنت متوقعة بكثير"
-        </p>
-        <div class="flex items-center gap-3">
-          <div class="bg-primary/20 text-primary p-2 rounded-full">
-            <span class="material-symbols-outlined">person</span>
-          </div>
-          
-        </div>
-      </div>
-
-      <div class="p-8 border rounded-xl testi-card reveal">
-        <div class="flex gap-1 mb-4 text-yellow-400">
-          <span class="material-symbols-outlined">star</span>
-          <span class="material-symbols-outlined">star</span>
-          <span class="material-symbols-outlined">star</span>
-          <span class="material-symbols-outlined">star</span>
-          <span class="material-symbols-outlined">star</span>
-        </div>
-        <p class="text-slate-600 mb-6 leading-relaxed">
-          "إنسان ما شاء الله في القمة، إلى تعامل آخر قريباً"
-        </p>
-        <div class="flex items-center gap-3">
-          <div class="bg-primary/20 text-primary p-2 rounded-full">
-            <span class="material-symbols-outlined">person</span>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CTA SECTION ===== -->
-<section class="py-24" id="contact">
-  <div class="max-w-4xl mx-auto px-4">
-    <div class="cta-bg rounded-3xl p-12 text-center text-white reveal shadow-2xl">
-      <div class="text-5xl mb-4">🚀</div>
-      <h2 class="text-4xl font-black mb-4">مستعد تبدأ مشروعك؟</h2>
-      <p class="text-lg opacity-90 mb-10 max-w-xl mx-auto">
-        تواصل معنا اليوم واحصل على استشارة مجانية. فريقنا جاهز لمساعدتك تبني حضورك الرقمي.
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <!-- WhatsApp -->
-        <a href="https://wa.me/213656604882?text=السلام عليكم، أريد الاستفسار عن خدماتكم"
-           target="_blank"
-           class="flex items-center gap-3 bg-[#25d366] hover:bg-green-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all hover:scale-105 shadow-lg">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-          </svg>
-          واتساب
-        </a>
-
-        <!-- Email -->
-        <a href="mailto:info@modeweb.site?subject=طلب خدمة"
-           class="flex items-center gap-3 bg-white text-primary hover:bg-blue-50 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:scale-105 shadow-lg">
-          <span class="material-symbols-outlined">mail</span>
-          إرسال إيميل
-        </a>
-
-        <!-- Phone -->
-        <a href="tel:+213656604882"
-           class="flex items-center gap-3 bg-white/20 hover:bg-white/30 backdrop-blur text-white px-8 py-4 rounded-xl font-bold text-lg transition-all hover:scale-105">
-          <span class="material-symbols-outlined">call</span>
-          اتصل بنا
-        </a>
-      </div>
-
-      <!-- contact info -->
-      <div class="mt-10 pt-8 border-t border-white/20 flex flex-col sm:flex-row gap-6 justify-center text-white/80 text-sm">
-        <span class="flex items-center gap-2 justify-center">
-          <span class="material-symbols-outlined text-sm">location_on</span>
-          الجزائر
-        </span>
-        <span class="flex items-center gap-2 justify-center">
-          <span class="material-symbols-outlined text-sm">phone</span>
-          +213 6 56 60 48 82
-        </span>
-        <span class="flex items-center gap-2 justify-center">
-          <span class="material-symbols-outlined text-sm">mail</span>
-          info@modeweb.site
-        </span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer class="py-16 bg-white border-t">
-  <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-10 text-right">
-    <div>
-      <div class="flex items-center gap-2 justify-end mb-4">
-        <h4 class="font-bold text-xl">Mode Web</h4>
-        <div class="bg-primary p-1.5 rounded-lg">
-          <span class="material-symbols-outlined text-white text-sm">rocket_launch</span>
-        </div>
-      </div>
-      <p class="text-slate-600">وكالة  متخصصة في تطوير المواقع ومساعدة الشركات على النجاح في العالم الرقمي.</p>
-    </div>
-
-    <div>
-      <h4 class="font-bold mb-4">الخدمات</h4>
-      <ul class="space-y-2 text-slate-600">
-        <li>تصميم المواقع</li>
-        <li>تطوير التطبيقات</li>
-        <li>SEO</li>
-      </ul>
-    </div>
-
-    <div>
-      <h4 class="font-bold mb-4">اتصل بنا</h4>
-      <ul class="space-y-2 text-slate-600">
-        <li class="flex items-center gap-2 justify-end">
-          <span>الجزائر</span>
-          <span class="material-symbols-outlined text-primary text-sm">location_on</span>
-        </li>
-        <li class="flex items-center gap-2 justify-end">
-          <a href="tel:+213656604882" class="hover:text-primary transition">+213 6 56 60 48 82</a>
-          <span class="material-symbols-outlined text-primary text-sm">phone</span>
-        </li>
-        <li class="flex items-center gap-2 justify-end">
-          <a href="mailto:info@modeweb.site" class="hover:text-primary transition">info@modeweb.site</a>
-          <span class="material-symbols-outlined text-primary text-sm">mail</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="text-center text-sm text-slate-400 mt-12">
-    © 2026 Mode Web — جميع الحقوق محفوظة
-  </div>
-</footer>
-
-<script>
-  // ===== SCROLL REVEAL =====
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        // count up stats when visible
-        if (entry.target.classList.contains('stat-num')) {
-          countUp(entry.target);
-        }
-      }
-    });
-  }, { threshold: 0.15 });
-
-  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
-  document.querySelectorAll('.stat-num').forEach(el => observer.observe(el));
-
-  // ===== COUNT UP =====
-  function countUp(el) {
-    const target = parseInt(el.dataset.target);
-    const duration = 1500;
-    const step = target / (duration / 16);
-    let current = 0;
-    const timer = setInterval(() => {
-      current += step;
-      if (current >= target) { current = target; clearInterval(timer); }
-      el.textContent = Math.floor(current);
-    }, 16);
-  }
-
-  // ===== SMOOTH SCROLL =====
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
-        document.getElementById('mobile-menu').classList.remove('open');
-      }
-    });
-  });
-</script>
+        // Reveal on Scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    el.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+    </script>
 </body>
 </html>
+
